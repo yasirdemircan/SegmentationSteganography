@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Steg Encoder
+  </title>
+  <meta content="" name="description"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="" rel="stylesheet"/>
+  <script crossorigin="anonymous" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js">
+  </script>
+  <style>
+   html, body {
+
+    background: -webkit-linear-gradient(180deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
+}
+
+#images {
+display: flex;
+justify-content: center;
+}
+
+.btn {
+    width: 10%;
+    height: 5%;
+  background: #354A58;
+  background-image: -webkit-linear-gradient(top, #354A58, #232332);
+  background-image: -moz-linear-gradient(top, #354A58, #232332);
+  background-image: -ms-linear-gradient(top, #354A58, #232332);
+  background-image: -o-linear-gradient(top, #354A58, #232332);
+  background-image: linear-gradient(to bottom, #354A58, #232332);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.btn:hover {
+  background: #232332;
+  background-image: -webkit-linear-gradient(top, #232332, #232332);
+  background-image: -moz-linear-gradient(top, #232332, #232332);
+  background-image: -ms-linear-gradient(top, #232332, #232332);
+  background-image: -o-linear-gradient(top, #232332, #232332);
+  background-image: linear-gradient(to bottom, #232332, #232332);
+  text-decoration: none;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+}
+  </style>
+ </head>
+ <body>
+  <div id="main">
+   <center>
+    <div style="display:flex ; flex-direction: column;">
+     <h1>
+      Steganographic Encoder
+     </h1>
+     <h2 id="status">
+     </h2>
+    </div>
+   </center>
+   <div id="controls">
+    <input id="file" type="file"/>
+    <button class="btn" id="getsize">
+     Get File Size
+    </button>
+    <input id="password_input" placeholder="password" style="width: 10%; font-size: larger;" type="text"/>
+    <button class="btn" id="encode">
+     Encode
+    </button>
+    <div id="filesize_div">
+     <h3 id="filesize_text">
+     </h3>
+    </div>
+    <div id="estimated_cap_div">
+     <h3 id="estimated_cap_text">
+     </h3>
+    </div>
+   </div>
+   <div id="images">
+    <center>
+     <span>
+      <h3>
+       Original
+      </h3>
+     </span>
+     <img id="img" src="DATASET/car.png"/>
+     <span>
+      <h3>
+       Steg Img
+      </h3>
+     </span>
+     <canvas id="canvas">
+     </canvas>
+    </center>
+   </div>
+   <!--    <label for="segcanvas">
+        Segmask
+    </label> -->
+   <img id="segimg" src="segmap.jpg" style="display:none"/>
+   <canvas id="segcanvas" style="display:none">
+   </canvas>
+   <!--     <label for="origcanvas">
+        Original as PNG
+    </label> -->
+   <canvas id="origcanvas" style="display: none;">
+   </canvas>
+  </div>
+ </body>
+ <script src="hide_alg.js">
+ </script>
+</html>
