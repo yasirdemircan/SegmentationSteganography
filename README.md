@@ -4,7 +4,7 @@ This project is a implementation of LSB steganography using image segmentation. 
 ## Steps to run
 - Navigate to build
 
-- Start the python web server
+- Start the python web server using 
 python start server.py (default running at localhost:8000)
 
 - Navigate to localhost:8000 for the react app 
